@@ -4,12 +4,12 @@
 |----------------------|--------|-------------|
 | nickname             | string | null: false |
 | email                | string | null: false unique: true|
-| encrypted-password   | string | null: false |
-| last-name            | string | null: false |
-| first-name           | string | null: false |
-| name-kana-last-name  | string | null: false |
-| name-kana-first-name | string | null: false |
-| date-of-birth        | date   | null: false |
+| encrypted_password   | string | null: false |
+| last_name            | string | null: false |
+| first_name           | string | null: false |
+| name_kana_last_name  | string | null: false |
+| name_kana_first_name | string | null: false |
+| date_of_birth        | date   | null: false |
 
 
 
@@ -22,14 +22,14 @@ has_many :buys
 | Column             | Type       | Options     |
 |--------------------|------------|-------------|
 | user               | references | null: false foreign_key: true |
-| items-name         | string     | null: false |
+| items_name         | string     | null: false |
 | explain            | text       | null: false |
-| category           | string     | null: false |
-| situation          | string     | null: false |
-| delivery-charge    | string     | null: false |
-| area               | string     | null: false |
-| days               | string     | null: false |
-| price              | ini        | null: false |
+| category_id        | integer    | null: false |
+| situation_id       | integer    | null: false |
+| delivery_charge_id | integer    | null: false |
+| area_id            | integer    | null: false |
+| shipping_day_id    | integer    | null: false |
+| price              | integer    | null: false |
 
 
 ### Association
@@ -54,12 +54,12 @@ belongs_to :item
 | Column             | Type       | Options     |
 |--------------------|------------|-------------|
 | buy                | references | null: false foreign_key: true |
-| postal-code        | string     | null: false |
-| prefectures        | string     | null: false |
+| postal_code        | string     | null: false |
+| area_id            | string     | null: false |
 | city               | string     | null: false |
-| addresses          | string     | null: false |
-| building           | string     | null: true  |
-| phone-number       | string     | null: false |
+| address            | string     | null: false |
+| building           | string     |             |
+| phone_number       | string     | null: false |
 
 
 
