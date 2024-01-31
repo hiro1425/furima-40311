@@ -49,13 +49,13 @@ has_one :address
 belongs_to :user
 belongs_to :item
 
-## addressテーブル
+## addressesテーブル
 
 | Column             | Type       | Options     |
 |--------------------|------------|-------------|
 | buy                | references | null: false foreign_key: true |
 | postal_code        | string     | null: false |
-| area_id            | string     | null: false |
+| area_id            | integer    | null: false |
 | city               | string     | null: false |
 | address            | string     | null: false |
 | building           | string     |             |
