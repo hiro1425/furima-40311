@@ -17,6 +17,7 @@
 has_many :items
 has_many :buys
 
+
 ## itemsテーブル
 
 | Column             | Type       | Options     |
@@ -32,9 +33,11 @@ has_many :buys
 | price              | integer    | null: false |
 
 
+
 ### Association
 belongs_to :user
 has_one :buy
+
 
 ## buysテーブル
 
@@ -44,10 +47,12 @@ has_one :buy
 | item               | references | null: false foreign_key: true |
 
 
+
 ### Association
 has_one :address
 belongs_to :user
 belongs_to :item
+
 
 ## addressesテーブル
 
