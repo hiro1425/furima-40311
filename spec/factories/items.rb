@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :item do
-    items_name             { 'カラーコーン' }
-    explain           { '2年前に購入したものです' }
+    items_name { 'カラーコーン' }
+    explain { '2年前に購入したものです' }
     category_id           { 3 }
     situation_id          { 3 }
     delivery_charge_id    { 3 }
