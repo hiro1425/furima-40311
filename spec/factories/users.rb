@@ -4,7 +4,7 @@ FactoryBot.define do
       person { Gimei.name }
     end
     nickname              { Faker::Name.initials }
-    email                 { Faker::Internet.free_email }
+    email                 { Faker::Internet.email }
     password              { 'f7' + Faker::Internet.password(min_length: 6) }
     password_confirmation { password }
     last_name             { person.last.kanji }

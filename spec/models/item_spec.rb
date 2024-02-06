@@ -63,7 +63,7 @@ RSpec.describe Item, type: :model do
       it '価格が入力されていなければ投稿できない' do
         @item.price = ''
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price can't be blank", 'Price is invalid', 'Price is not a number')
+        expect(@item.errors.full_messages).to include("Price can't be blank", 'Price is not a number')
       end
       it '価格が299円以下であれば投稿できない' do
         @item.price = '299'

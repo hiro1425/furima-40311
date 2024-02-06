@@ -7,7 +7,7 @@ class Item < ApplicationRecord
   validates :delivery_charge_id, presence: true
   validates :area_id, presence: true
   validates :shipping_day_id, presence: true
-  with_options presence: true, format: { with: /\A[0-9]+\z/ } do
+  with_options presence: true do
     validates :price, numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999 }
   end
 
