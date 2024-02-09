@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_item, only: [:edit, :show, :update]
-  before_action :redirect_if_not_author, only: [:edit]
+  before_action :set_item, only: [:edit, :show, :update, :destroy]
+  before_action :redirect_if_not_author, only: [:edit, :destroy]
 
   def index
     @items = Item.all.order(created_at: :desc)
@@ -32,6 +32,11 @@ class ItemsController < ApplicationController
     else
       render :edit, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @item.destroy
+    redirect_to root_path
   end
 
   private
