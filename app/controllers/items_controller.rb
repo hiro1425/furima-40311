@@ -46,8 +46,8 @@ class ItemsController < ApplicationController
   end
 
   def redirect_if_not_author
-    unless current_user == @item.user
-      redirect_to root_path
-    end
+    return if current_user == @item.user
+
+    redirect_to root_path
   end
 end
