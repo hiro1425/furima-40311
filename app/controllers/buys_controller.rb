@@ -1,4 +1,6 @@
 class BuysController < ApplicationController
+  before_action :authenticate_user!, only: [:index, :create]
+  before_action :redirect_if_author_or_sold, only: [:index, :create]
   def index
     gon.public_key = ENV["PAYJP_PUBLIC_KEY"]
     @buy_address = BuyAddress.new
@@ -31,5 +33,12 @@ class BuysController < ApplicationController
       card: buy_params[:token],
       currency: 'jpy'
     )
+  end
+
+  def redirect_if_author_or_sold
+    @item = Item.find(params[:item_id])
+    if @item.user_id == current_user.id || @item.buy.present?
+      redirect_to root_path
+    end
   end
 end
